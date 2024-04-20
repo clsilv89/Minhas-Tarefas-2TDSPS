@@ -30,22 +30,27 @@ class CriaTarefasFragment : Fragment() {
         }
 
         binding.botaoCriaTarefa.setOnClickListener {
-            tarefa(descricaoTarefa)
+            if (descricaoTarefa.isNotEmpty()) {
+                (activity as MainActivity).getTarefa(descricaoTarefa)
+            } else {
+                binding.textInputLayoutTarefa.error = "Descrição não pode estar vazia."
+            }
+//            tarefa(descricaoTarefa)
         }
 
         return binding.root
     }
 
-    companion object {
-        private var tarefa: (String) -> Unit = {}
-        @JvmStatic
-        fun newInstance(tarefa: (String) -> Unit = {}, param2: String): CriaTarefasFragment {
-            this.tarefa = tarefa
-            return CriaTarefasFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-        }
-    }
+//    companion object {
+//        private var tarefa: (String) -> Unit = {}
+//        @JvmStatic
+//        fun newInstance(tarefa: (String) -> Unit = {}, param2: String): CriaTarefasFragment {
+//            this.tarefa = tarefa
+//            return CriaTarefasFragment().apply {
+//                arguments = Bundle().apply {
+//
+//                }
+//            }
+//        }
+//    }
 }

@@ -16,6 +16,8 @@
         android:id="@+id/botaoCriaTarefa"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:text="Criar nova tarefa"
+        android:layout_marginHorizontal="12dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
